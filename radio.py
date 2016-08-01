@@ -1,9 +1,10 @@
 class Radio ():
-    def __init__ (self, estacion_FM, FM, estacion_AM ):
+    def __init__ (self, estacion_FM, FM, estacion_AM, marca ):
         self.encendido = True
         self.estacion_FM = 88.00
         self.estacion_AM = 300
         self.FM = True
+        self.marca = ""
 
 
     def encender (self):
