@@ -1,10 +1,11 @@
 class Radio ():
-    def __init__ (self, estacion_FM, FM, estacion_AM, marca ):
+    def __init__ (self, estacion_FM, FM, estacion_AM, marca, volumen ):
         self.encendido = True
         self.estacion_FM = 88.00
         self.estacion_AM = 300
-        self.FM = True
+        self.en_FM = True
         self.marca = ""
+        self.volumen = 0
 
 
     def encender (self):
@@ -13,34 +14,58 @@ class Radio ():
     def apagar (self):
         self.apagar = False
 
-    def estacion_FM (self):
-       # des = int(input("1. Subir de estacion \n 2. Bajar de estacion \n 3. Dejar igual la estacion"))
+    def en_FM (self):
+        self.en_FM  = True
 
-        if des == 1:
+    def en_AM (self):
+        self.en_FM  = False
+
+    def subir_estacion (self):
+        if en_FM == True:
             estacion_FM = estacion_FM + 0.5
-        else :
+
+            if estacion_FM > 107.00 :
+                estacion_FM = 87.00
+
+            estacion_FM = estacion_FM
+        else: 
+            estacion_AM = estacion_AM + 40
+
+            if estacion_AM > 1300 :
+                estacion_AM = 300
+
+            estacion_AM = estacion_AM
+
+    def bajar_estacion (self):
+        if en_FM == True:
             estacion_FM = estacion_FM - 0.5
 
-        if estacion_FM > 107.00 :
-            estacion_FM = 87.00
-
-        if estacion_FM < 88.00 :
+            if estacion_FM < 88.00 :
             estacion_FM = 107.00
 
-        self.estacion_FM = estacion_FM
-
-    def estacion_FM (self):
-       # des = int(input("1. Subir de estacion \n 2. Bajar de estacion \n 3. Dejar igual la estacion"))
-
-        if des == 1:
-            estacion_AM = estacion_AM + 40
-        else :
+            self.estacion_FM = estacion_FM
+        else:
             estacion_AM = estacion_AM - 40
+                if estacion_AM < 1300 :
+                estacion_AM = 300
 
-        if estacion_AM > 1300 :
-            estacion_AM = 300
+                self.estacion_AM = estacion_AM
 
-        if estacion_AM < 1300 :
-            estacion_AM = 300
+    def subir_volumen (self):
 
-        self.estacion_AM = estacion_AM
+        if subir_volumen == True:
+            volumen = volumen + 10
+
+            if volumen > 100:
+                volumen = 100
+
+    def bajar_volumen (self):
+        if subir_volumen == False
+            volumen = volumen - 10
+
+            if volumen < 0:
+                volumen = 0
+
+
+        
+       
